@@ -1,0 +1,22 @@
+{
+  "name": "asheville-community-chat-bot",
+  "version": "1.0.0",
+  "description": "A chat bot which parses community messages and maintains a calendr",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && npm run copy",
+    "copy": "cp -f *.yml dist && cp -f ecosystem.config.js dist",
+    "start": "node dist/index.js"
+  },
+  "author": "Mike Cherneski",
+  "license": "MIT",
+  "dependencies": {
+    "chrono-node": "^1.4.9",
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4"
+  }
+}
