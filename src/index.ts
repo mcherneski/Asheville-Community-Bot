@@ -1,5 +1,5 @@
 import { Telegraf, session } from 'telegraf'
-import chrono from 'chrono-node'
+// import * as chrono from 'chrono-node'
 
 /// @dev Not sure if we need the context or any scenes. Maybe for posting an event?
 // import { AvlContext } from './context'
