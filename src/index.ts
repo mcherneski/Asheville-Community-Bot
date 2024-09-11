@@ -21,7 +21,7 @@ bot.on('message', (ctx) => {
    console.log('ctx message is: ')
    console.log(ctx.message)
 
-   return ctx.reply('Hello!')
+   return ctx.reply('Hello! This bot is in development. Info has been logged to the server.')
    // const parsedDate = ctx.message.text ? chrono.parseDate(ctx.message.text) : null
 
 
