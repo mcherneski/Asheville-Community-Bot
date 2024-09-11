@@ -7,6 +7,14 @@ import * as chrono from 'chrono-node'
 
 require('dotenv').config()
 
+const ParseEasternTimezone = {
+   timezoneOffsetDuringDst: -240,
+   timezoneOffsetStandard: -300,
+   dstStart: (year: number) => chrono.getLastWeekdayOfMonth(year, chrono.Month.FEBRUARY, chrono.Weekday.SUNDAY, 2),
+  dstEnd: (year: number) => chrono.getLastWeekdayOfMonth(year, chrono.Month.SEPTEMBER, chrono.Weekday.SUNDAY, 3)
+}
+
+
 const bot = new Telegraf(process.env.BOT_TOKEN as string)
 
 bot.start((ctx) => {
@@ -26,7 +34,7 @@ bot.on('message', (ctx) => {
       inputText = ctx.text
 
       const parsedDate = inputText ? chrono.parseDate(inputText, {
-         timeZone: 'ET'
+         timeZone: {ET: ParseEasternTimezone}
       }) : null
       console.log(parsedDate)
       return ctx.reply(`Parsed date is ${parsedDate}`)
