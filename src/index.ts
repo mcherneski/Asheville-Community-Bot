@@ -26,7 +26,7 @@ bot.on('message', (ctx) => {
       inputText = ctx.text
 
       const parsedDate = inputText ? chrono.parseDate(inputText, {
-         timeZone: 'EDT'
+         timeZone: 'ET'
       }) : null
       console.log(parsedDate)
       return ctx.reply(`Parsed date is ${parsedDate}`)
@@ -37,7 +37,6 @@ bot.on('message', (ctx) => {
    // const parsedDate = ctx.message.text ? chrono.parseDate(ctx.message.text) : null
 
 })
-
 
 
 bot.launch()
