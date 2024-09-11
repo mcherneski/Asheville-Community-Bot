@@ -4,13 +4,14 @@ files:
   - source: /dist/
     destination: /home/ec2-user/avl_bot/dist/
     overwrite: true
+    owner: ec2-user
 file_exists_behaviour: OVERWRITE
 hooks:
 # Install
   ApplicationStop:
     - location: scripts/application_stop.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
   AfterInstall:
     - location: scripts/after_install.sh
       timeout: 300
