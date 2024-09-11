@@ -9,6 +9,11 @@ require('dotenv').config()
 
 const bot = new Telegraf(process.env.BOT_TOKEN as string)
 
+bot.start((ctx) => {
+   console.log('started:', ctx)
+   return ctx.reply('Welcome!')
+})
+
 bot.on('message', (ctx) => {
    console.log(`CTX Data: `)
    console.log(ctx)
@@ -16,7 +21,7 @@ bot.on('message', (ctx) => {
    console.log('ctx message is: ')
    console.log(ctx.message)
 
-   
+   return ctx.reply('Hello!')
    // const parsedDate = ctx.message.text ? chrono.parseDate(ctx.message.text) : null
 
 
