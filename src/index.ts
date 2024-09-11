@@ -1,5 +1,5 @@
 import { Telegraf, session } from 'telegraf'
-// import * as chrono from 'chrono-node'
+import * as chrono from 'chrono-node'
 
 /// @dev Not sure if we need the context or any scenes. Maybe for posting an event?
 // import { AvlContext } from './context'
@@ -16,6 +16,7 @@ bot.on('message', (ctx) => {
    console.log('ctx message is: ')
    console.log(ctx.message)
 
+   
    // const parsedDate = ctx.message.text ? chrono.parseDate(ctx.message.text) : null
 
 
