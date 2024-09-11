@@ -1,5 +1,5 @@
 #!/bin/bash
-echo 'Cleaning up old files' >> /home/ec2-user/avl_bot_logs/deploy.log
+echo 'Cleaning up old files' >> /home/ec2-user/avl_bot_logs/DeployLog.txt 
 
 sudo npm install pm2 -g
 if [ -d "/home/ec2-user/avl_bot/dist" ]; then
