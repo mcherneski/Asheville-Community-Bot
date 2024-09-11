@@ -5,20 +5,20 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - sudo -u ec2-user npm install
+      - npm install
   pre_build:
     commands:
       - echo "Nothing to do in the pre_build phase..."
   build:
     commands:
-      - sudo -u ec2-user npm run build  # Run as ec2-user
-      - sudo -u ec2-user cp appspec.yml dist/
-      - sudo -u ec2-user cp -r scripts dist/
-      - sudo -u ec2-user cp ecosystem.config.js dist/
-      - sudo -u ec2-user cp package.json dist/
+      - npm run build  # Run as ec2-user
+      - cp appspec.yml dist/
+      - cp -r scripts dist/
+      - cp ecosystem.config.js dist/
+      - cp package.json dist/
   post_build:
     commands:
-      - sudo -u ec2-user npm install 
+      - npm install 
 artifacts:
   files:
     - "dist/**/*"
