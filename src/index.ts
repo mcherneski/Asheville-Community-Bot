@@ -14,18 +14,29 @@ bot.start((ctx) => {
    return ctx.reply('Welcome!')
 })
 
+
 bot.on('message', (ctx) => {
    console.log(`CTX Data: `)
    console.log(ctx)
 
-   console.log('ctx message is: ')
-   console.log(ctx.message)
+   let inputText
+   let inputImage
+
+   if (ctx.text) {
+      inputText = ctx.text
+
+      const parsedDate = inputText ? chrono.parseDate(inputText) : null
+      console.log(parsedDate)
+      return ctx.reply(`Parsed date is ${parsedDate}`)
+   }
+
 
    return ctx.reply('Hello! This bot is in development. Info has been logged to the server.')
    // const parsedDate = ctx.message.text ? chrono.parseDate(ctx.message.text) : null
 
-
 })
+
+
 
 bot.launch()
 
